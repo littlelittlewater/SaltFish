@@ -1,4 +1,4 @@
-package org.saltfish;
+package org.saltfish.action;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -6,9 +6,9 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 
-public class TestAction extends AnAction {
+public class SaltFishAction extends AnAction {
 
-    public TestAction() {
+    public SaltFishAction() {
         super("Salt Fish");
     }
 
