@@ -17,9 +17,18 @@
     </extensions>
 
     <actions>
-        <group id="MyPlugin.SampleMenu" text="_Sample Menu" description="Sample menu">
+        <group id="MyPlugin.SampleMenu" text="_Sample Menu" description="Salt ">
             <add-to-group group-id="MainMenu" anchor="last"  />
             <action id="Myplugin.Textboxes" class="org.saltfish.action.SaltFishAction" text="Text _Boxes" description="A test menu item" />
         </group>
     </actions>
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Book" secondary="true" icon="AllIcons.General.Modified" anchor="bottom"
+                    factoryClass="org.saltfish.windows.MyToolWindowFactory"/>
+        <applicationConfigurable parentId="tools" instance="org.saltfish.setting.AppSettingsConfigurable"
+                                 id="org.intellij.sdk.settings.AppSettingsConfigurable"
+                                 displayName="SDK: Application Settings Example"/>
+        <applicationService serviceImplementation="org.saltfish.setting.AppSettingsState"/>
+    </extensions>
+
 </idea-plugin>
