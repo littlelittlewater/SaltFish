@@ -18,8 +18,14 @@
 
     <actions>
         <group id="MyPlugin.SampleMenu" text="_Sample Menu" description="Salt ">
-            <add-to-group group-id="MainMenu" anchor="last"  />
-            <action id="Myplugin.Textboxes" class="org.saltfish.action.SaltFishAction" text="Text _Boxes" description="A test menu item" />
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action id="Myplugin.Textboxes" class="org.saltfish.action.SaltFishAction" text="Text_Boxes"
+                    description="A test menu item"/>
+            <action id="Myplugin.BookNext" class="org.saltfish.action.BookNextAction" text="Text_Boxes"
+                    description="clicked the next buttom">
+                <keyboard-shortcut first-keystroke="control {" second-keystroke="C" keymap="$default"/>
+            </action>
+
         </group>
     </actions>
     <extensions defaultExtensionNs="com.intellij">

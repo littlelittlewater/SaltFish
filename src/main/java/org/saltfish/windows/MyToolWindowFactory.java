@@ -18,8 +18,9 @@ public class MyToolWindowFactory implements ToolWindowFactory {
   public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
     Book myToolWindow = new Book(toolWindow);
     ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
-    Content content = contentFactory.createContent(myToolWindow.getContent(), "", false);
+    Content content = contentFactory.createContent(myToolWindow.getContent(), "kkkkkkk", true);
     toolWindow.getContentManager().addContent(content);
+
   }
 
 }
