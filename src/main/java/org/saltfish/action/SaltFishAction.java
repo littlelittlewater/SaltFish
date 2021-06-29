@@ -8,6 +8,7 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.saltfish.setting.AppSettingsState;
+import org.saltfish.windows.MyToolWindowFactory;
 
 public class SaltFishAction extends AnAction {
 
@@ -27,5 +28,6 @@ public class SaltFishAction extends AnAction {
         VirtualFile virtualFile = FileChooser.chooseFile(descriptor,application,null);
         AppSettingsState appSettingsState = AppSettingsState.getInstance();
         appSettingsState.filePath = virtualFile.getPath();
+        MyToolWindowFactory.freshFile();
     }
 }

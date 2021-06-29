@@ -10,16 +10,24 @@ import com.sun.istack.NotNull;
 import java.time.LocalDateTime;
 
 public class MyToolWindowFactory implements ToolWindowFactory {
-  private static Book book;
-  public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
-    book = new Book(toolWindow);
-    ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
-    Content content = contentFactory.createContent(book.getContent(), "kkkkkkk", true);
-    toolWindow.getContentManager().addContent(content);
-  }
+    private static Book book;
 
-  public static void addText(){
-      book.updateCount("hello" + LocalDateTime.now());
-  }
+    public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
+        book = new Book(toolWindow);
+        ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
+        Content content = contentFactory.createContent(book.getContent(), "kkkkkkk", true);
+        toolWindow.getContentManager().addContent(content);
+    }
 
+    public static void addText() {
+        book.nextPage();
+    }
+
+    public static void lastText() {
+        book.lastPage();
+    }
+
+    public static void freshFile() {
+        book.freshFile();
+    }
 }

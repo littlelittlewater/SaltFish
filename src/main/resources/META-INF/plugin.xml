@@ -25,7 +25,10 @@
                     description="clicked the next buttom">
                 <keyboard-shortcut first-keystroke="control J " keymap="$default"/>
             </action>
-
+            <action id="Myplugin.BookLast" class="org.saltfish.action.BookLastAction" text="Text_Boxes"
+                    description="clicked the next buttom">
+                <keyboard-shortcut first-keystroke="control K " keymap="$default"/>
+            </action>
         </group>
     </actions>
     <extensions defaultExtensionNs="com.intellij">

@@ -10,52 +10,63 @@ import javax.swing.*;
 
 public class AppSettingsComponent {
 
-  private final JPanel myMainPanel;
-  private final JBTextField myUserNameText = new JBTextField();
-  private final JBTextField height = new JBTextField();
-  private final JBTextField length = new JBTextField();
-  private final JBCheckBox myIdeaUserStatus = new JBCheckBox("Do you use IntelliJ IDEA? ");
+    private final JPanel myMainPanel;
+    private final JBTextField myUserNameText = new JBTextField();
+    private final JBTextField height = new JBTextField();
+    private final JBTextField length = new JBTextField();
+    private final JBTextField cursor = new JBTextField();
+    private final JBCheckBox myIdeaUserStatus = new JBCheckBox("Do you use IntelliJ IDEA? ");
 
-  public AppSettingsComponent() {
-    myMainPanel = FormBuilder.createFormBuilder()
-            .addLabeledComponent(new JBLabel("length"), length, 1, false)
-            .addLabeledComponent(new JBLabel("height"), height, 1, false)
-            .addLabeledComponent(new JBLabel("Enter user name: "), myUserNameText, 1, false)
-            .addComponent(myIdeaUserStatus, 1)
-            .addComponentFillVertically(new JPanel(), 0)
-            .getPanel();
-  }
+    public AppSettingsComponent() {
+        myMainPanel = FormBuilder.createFormBuilder()
+                .addLabeledComponent(new JBLabel("length"), length, 1, false)
+                .addLabeledComponent(new JBLabel("height"), height, 1, false)
+                .addLabeledComponent(new JBLabel("cursor"), cursor, 1, false)
+                .addLabeledComponent(new JBLabel("Enter user name: "), myUserNameText, 1, false)
+                .addComponent(myIdeaUserStatus, 1)
+                .addComponentFillVertically(new JPanel(), 0)
+                .getPanel();
+    }
 
-  public JPanel getPanel() {
-    return myMainPanel;
-  }
+    public JPanel getPanel() {
+        return myMainPanel;
+    }
 
-  public JComponent getPreferredFocusedComponent() {
-    return myUserNameText;
-  }
+    public JComponent getPreferredFocusedComponent() {
+        return myUserNameText;
+    }
 
-  @NotNull
-  public String getUserNameText() {
-    return myUserNameText.getText();
-  }
+    @NotNull
+    public String getUserNameText() {
+        return myUserNameText.getText();
+    }
 
-  public void setUserNameText(@NotNull String newText) {
-    myUserNameText.setText(newText);
-  }
+    public void setUserNameText(@NotNull String newText) {
+        myUserNameText.setText(newText);
+    }
 
-  public boolean getIdeaUserStatus() {
-    return myIdeaUserStatus.isSelected();
-  }
+    public boolean getIdeaUserStatus() {
+        return myIdeaUserStatus.isSelected();
+    }
 
-  public void setIdeaUserStatus(boolean newStatus) {
-    myIdeaUserStatus.setSelected(newStatus);
-  }
+    public void setIdeaUserStatus(boolean newStatus) {
+        myIdeaUserStatus.setSelected(newStatus);
+    }
 
-  public JBTextField getHeight() {
-    return height;
-  }
+    public int getHeight() {
+        return Integer.valueOf(height.getText());
+    }
 
-  public JBTextField getLength() {
-    return length;
-  }
+    public void setHeight(int height) {
+        this.height.setText("" + height);
+    }
+
+    public int getLength() {
+        return Integer.valueOf(length.getText());
+    }
+
+    public void setLength(int length) {
+        this.length.setText("" + length);
+    }
+
 }
