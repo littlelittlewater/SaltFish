@@ -19,7 +19,9 @@ import org.jetbrains.annotations.Nullable;
 )
 public class AppSettingsState implements PersistentStateComponent<AppSettingsState> {
 
-  public String userId = "John Q. Public";
+  public String filePath = "John Q. Public";
+  public int length = 30;
+  public int height = 3;
   public boolean ideaStatus = false;
 
   public static AppSettingsState getInstance() {

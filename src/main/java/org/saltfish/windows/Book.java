@@ -12,7 +12,9 @@ public class Book {
         textPane1.setText("hello World");
     }
 
-
+    public void updateCount(String content){
+       textPane1.setText(content);
+    }
     public JComponent getContent() {
         return myWindowContent;
     }

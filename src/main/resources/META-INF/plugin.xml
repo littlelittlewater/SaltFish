@@ -23,7 +23,7 @@
                     description="A test menu item"/>
             <action id="Myplugin.BookNext" class="org.saltfish.action.BookNextAction" text="Text_Boxes"
                     description="clicked the next buttom">
-                <keyboard-shortcut first-keystroke="control {" second-keystroke="C" keymap="$default"/>
+                <keyboard-shortcut first-keystroke="control J " keymap="$default"/>
             </action>
 
         </group>

@@ -34,7 +34,7 @@ public class AppSettingsConfigurable implements Configurable {
   @Override
   public boolean isModified() {
     AppSettingsState settings = AppSettingsState.getInstance();
-    boolean modified = !mySettingsComponent.getUserNameText().equals(settings.userId);
+    boolean modified = !mySettingsComponent.getUserNameText().equals(settings.filePath);
     modified |= mySettingsComponent.getIdeaUserStatus() != settings.ideaStatus;
     return modified;
   }
@@ -42,14 +42,14 @@ public class AppSettingsConfigurable implements Configurable {
   @Override
   public void apply() {
     AppSettingsState settings = AppSettingsState.getInstance();
-    settings.userId = mySettingsComponent.getUserNameText();
+    settings.filePath = mySettingsComponent.getUserNameText();
     settings.ideaStatus = mySettingsComponent.getIdeaUserStatus();
   }
 
   @Override
   public void reset() {
     AppSettingsState settings = AppSettingsState.getInstance();
-    mySettingsComponent.setUserNameText(settings.userId);
+    mySettingsComponent.setUserNameText(settings.filePath);
     mySettingsComponent.setIdeaUserStatus(settings.ideaStatus);
   }
 

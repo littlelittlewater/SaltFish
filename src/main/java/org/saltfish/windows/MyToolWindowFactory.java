@@ -7,20 +7,19 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactory;
 import com.sun.istack.NotNull;
 
+import java.time.LocalDateTime;
+
 public class MyToolWindowFactory implements ToolWindowFactory {
-
-  /**
-   * Create the tool window content.
-   *
-   * @param project    current project
-   * @param toolWindow current tool window
-   */
+  private static Book book;
   public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
-    Book myToolWindow = new Book(toolWindow);
+    book = new Book(toolWindow);
     ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
-    Content content = contentFactory.createContent(myToolWindow.getContent(), "kkkkkkk", true);
+    Content content = contentFactory.createContent(book.getContent(), "kkkkkkk", true);
     toolWindow.getContentManager().addContent(content);
+  }
 
+  public static void addText(){
+      book.updateCount("hello" + LocalDateTime.now());
   }
 
 }

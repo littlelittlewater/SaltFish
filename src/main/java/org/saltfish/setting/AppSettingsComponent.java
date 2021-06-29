@@ -12,10 +12,14 @@ public class AppSettingsComponent {
 
   private final JPanel myMainPanel;
   private final JBTextField myUserNameText = new JBTextField();
+  private final JBTextField height = new JBTextField();
+  private final JBTextField length = new JBTextField();
   private final JBCheckBox myIdeaUserStatus = new JBCheckBox("Do you use IntelliJ IDEA? ");
 
   public AppSettingsComponent() {
     myMainPanel = FormBuilder.createFormBuilder()
+            .addLabeledComponent(new JBLabel("length"), length, 1, false)
+            .addLabeledComponent(new JBLabel("height"), height, 1, false)
             .addLabeledComponent(new JBLabel("Enter user name: "), myUserNameText, 1, false)
             .addComponent(myIdeaUserStatus, 1)
             .addComponentFillVertically(new JPanel(), 0)
@@ -47,4 +51,11 @@ public class AppSettingsComponent {
     myIdeaUserStatus.setSelected(newStatus);
   }
 
+  public JBTextField getHeight() {
+    return height;
+  }
+
+  public JBTextField getLength() {
+    return length;
+  }
 }
